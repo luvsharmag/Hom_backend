@@ -1,4 +1,4 @@
 node_modules/
-/src/data/.env
+.env
 *.log
-config/firebase-service-account.json
+*.json
