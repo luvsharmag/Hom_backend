@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luvsharmag/backend_dashboard.git"
+    "url": "git+https://github.com/luvsharmag/Hom_backend.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/luvsharmag/backend_dashboard/issues"
+    "url": "https://github.com/luvsharmag/Hom_backend/issues"
   },
-  "homepage": "https://github.com/luvsharmag/backend_dashboard#readme",
+  "homepage": "https://github.com/luvsharmag/Hom_backend#readme",
   "description": "",
   "dependencies": {
     "bcryptjs": "^2.4.3",
