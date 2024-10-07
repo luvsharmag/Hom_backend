@@ -1,3 +1,4 @@
+
 import jwt from "jsonwebtoken";
 
 export const sendCookie = (user,res,statusCode=200)=>{
@@ -6,7 +7,6 @@ export const sendCookie = (user,res,statusCode=200)=>{
     },process.env.JWT_SECRET,{
         expiresIn:"1hr"
     });
-
     return res.status(statusCode)
     .cookie("token",token,{
         httpOnly:true,
@@ -15,3 +15,6 @@ export const sendCookie = (user,res,statusCode=200)=>{
         secure:false
     });
 };
+
+
+

@@ -18,4 +18,5 @@ export const initializeFirebase = () => {
     credential: admin.credential.cert(serviceAccount),
   });
   console.log('Firebase initialized');
+  
 };
