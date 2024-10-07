@@ -23,6 +23,7 @@ export const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS, // Your email password
   },
 });
+console.log(process.env.EMAIL_USER);
 initializeFirebase();
 
 const corsOptions = {
