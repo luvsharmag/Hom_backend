@@ -77,7 +77,7 @@ export const register = async (req, res, next) => {
     );
   }
   const numberExist = await User.findOne({number});
-  console.log(numberExist.number);
+  
   if(numberExist){
     return next(new ErrorHandler("phone Number already exist!",400));
   }
