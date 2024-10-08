@@ -2,6 +2,8 @@ import express from "express";
 import { register,login,getMyProfile,logout, googleSign, checkUser, passwordResetRequest, passwordReset } from "../controller/user.js";
 import { isAuthenticated } from "../middlewares/auth.js";
 import {getNavLinks} from "../controller/navlinks.js";
+import { passwordResetLimiter } from "../middlewares/rateLimiter.js";
+
 
 const router = express.Router();
 
@@ -13,7 +15,7 @@ router.post("/register", register);
 router.post("/login", login);
 router.get("/profile", isAuthenticated, getMyProfile);
 router.get("/logout",logout);
-router.post("/requestPasswordReset",passwordResetRequest);
+router.post("/requestPasswordReset",passwordResetLimiter,passwordResetRequest);
 router.post("/reset-password/:token",passwordReset);
 
 router.get("/navLinks",getNavLinks);

@@ -12,6 +12,7 @@ import morgan from "morgan";
 import { initializeFirebase } from "../config/initializeFirebase.js";
 import nodemailer from "nodemailer";
 export const app = express();
+
 // console.log(process.env.EMAIL);
 export const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -23,7 +24,8 @@ export const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS, // Your email password
   },
 });
-console.log(process.env.EMAIL_USER);
+
+// console.log(process.env.EMAIL_USER);
 initializeFirebase();
 
 const corsOptions = {

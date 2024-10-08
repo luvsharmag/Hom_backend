@@ -6,6 +6,7 @@ import { sendCookie } from "../utils/features.js";
 import admin from "firebase-admin";
 import { transporter } from "../app.js";
 
+
 export const checkUser = async (req, res ,next) => {
   const { idToken } = req.body;
 
@@ -98,6 +99,7 @@ export const register = async (req, res, next) => {
   });
 };
 export const getMyProfile = async (req, res) => {
+  const {user} = req;
   return res.status(200).json({
     status: "success",
     data: {
@@ -187,8 +189,8 @@ export const passwordReset = async (req, res,next) => {
     }
 
     // Update user's password
-    // const hashedPassword = await bcryptjs.hash(newPassword, 10);
-    user.password = newPassword; // You should hash the password before saving it
+    const hashedPassword = await bcryptjs.hash(newPassword, 10);
+    user.password = hashedPassword; // You should hash the password before saving it
     user.resetToken = undefined; // Clear the reset token
     user.resetTokenExpiration = undefined; // Clear the expiration
     await user.save();
